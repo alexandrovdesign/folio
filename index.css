@@ -132,7 +132,8 @@ a{
 }
 
 .cases-container{
-	display: grid;
+	display: flex;
+	flex-direction: column;
 	gap: 10px;
 	margin-top: 20px;
 }
@@ -162,8 +163,15 @@ a{
 	margin-bottom: 40px;
 }
 
+.case-link{
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+}
+
 .button{
 	position: relative;
+	z-index: 2;
 }
 
 .button:before{
@@ -243,4 +251,141 @@ a{
 .socials a:hover::after{
   transform: scaleX(1);
   transform-origin: left;
+}
+
+/* Адаптация */
+@media (max-width: 1440px) {
+	.case-block{
+		height: 100vh;
+	}
+
+	.subtitle-text{
+		grid-column-start: 3;
+		margin: 354px 0;
+	}
+	
+	@keyframes marginAnimation {
+		0% {
+			margin: 354px 0;
+		}
+		100% {
+			margin: 240px 0;
+		}
+	}
+}
+
+@media (max-width: 1024px){
+	.subtitle-text{
+		grid-column-start: 3;
+		grid-column-end: 5;
+	}
+
+	.case-info{
+		grid-column-start: 3;
+		grid-column-end: 5;
+		margin-right: 20px;
+	}
+
+	.subtitle-text{
+		grid-column-start: 3;
+		margin: 306px 0;
+	}
+	
+	@keyframes marginAnimation {
+		0% {
+			margin: 306px 0;
+		}
+		100% {
+			margin: 240px 0;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.header .uppercase-text:nth-child(2){
+		display: none;
+	}
+
+	.header .uppercase-text:nth-child(3){
+		grid-column-start: 4;
+		text-align: right;
+	}
+
+	.header .uppercase-text:nth-child(4){
+		display: none;
+	}
+
+	.subtitle-text{
+		grid-column-start: 1;
+		grid-column-end: 3;
+		margin: 260px 0;
+	}
+	
+	@keyframes marginAnimation {
+		0% {
+			margin: 260px 0;
+		}
+		100% {
+			margin: 200px 0;
+		}
+	}
+
+	.section .uppercase-text{
+		display: none;
+	}
+
+	.section .logotype{
+		grid-column-start: 1;
+		grid-column-end: 5;
+	}
+
+	.case-block{
+		height: 60vh;
+	}
+
+	.case-block .title{
+		grid-column-start: 1;
+		grid-column-end: 5;
+		margin: auto auto 20px auto;
+	}
+
+	.case-info{
+		display: none;
+	}
+
+	.footer .text:nth-child(3){
+		grid-column-start: 1;
+		grid-column-end: 5;
+	}
+
+	.footer .text:nth-child(2), .footer .text:nth-child(4){
+		display: none;
+	}
+}
+
+@media (max-width: 440px) {
+	.main{
+		padding: 10px;
+	}
+
+	.header{
+		padding: 10px 10px 0 10px !important;
+	}
+
+	.header .uppercase-text:nth-child(1){
+		grid-column-start: 1;
+		grid-column-end: 3;
+	}
+
+	.header .uppercase-text:nth-child(3){
+		grid-column-start: 3;
+		grid-column-end: 5;
+		text-align: right;
+	}
+
+	.subtitle-text{
+		grid-column-start: 1;
+		grid-column-end: 5;
+		margin: 260px 0;
+	}
 }
