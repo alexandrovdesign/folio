@@ -31,7 +31,7 @@ function goBack() {
 
 // Header scroll-transform
 window.addEventListener('scroll', function () {
-	const header = document.querySelector('.header');
+	const header = document.getElementById('header');
 	if (window.scrollY >= 660) {
 		header.style.padding = '20px 40px 0 40px';
 	} else {

@@ -159,15 +159,15 @@ a{
 }
 
 @media (max-width: 768px) {
+	.header .uppercase-text:nth-child(2){
+		display: none;
+	}
+	
 	.header .uppercase-text:nth-child(3){
 		grid-column-start: 2;
 		grid-column-end: 5;
 		text-align: right;
 		display: flex;
-	}
-
-	.header .uppercase-text:nth-child(2){
-		display: none;
 	}
 
 	.section .text:nth-child(1){
